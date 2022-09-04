@@ -3,16 +3,24 @@ package io.github.animeshxd;
 import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
+@ComponentScan(basePackages = "io.github.animeshxd.repository")
 public class AppConfig {
+
+    @Bean
+    public HibernateTemplate template(){
+        return new HibernateTemplate(sessionFactory().getObject());
+    }
 
     @Bean
     public LocalSessionFactoryBean sessionFactory(){
