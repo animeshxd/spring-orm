@@ -1,6 +1,1 @@
-target/classes/hibernate.cfg.xml
-target/classes/io/github/animeshxd/App.class
-target/classes/io/github/animeshxd/AppConfig.class
-target/classes/io/github/animeshxd/models/User.class
-target/classes/io/github/animeshxd/repository/Manager.class
-target/test-classes/io/github/animeshxd/AppTest.class
+target/
