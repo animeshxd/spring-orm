@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <!-- // We have to specify Database connection settings with DataSource bean
+            <property name="connection.driver_class">org.postgresql.Driver</property>
+            <property name="connection.url">jdbc:postgresql:test</property>
+        
+            <property name="connection.username">test</property> 
+            <property name="connection.password">test</property> 
+        -->
+
+        <!-- SQLiteDialect. -->
+        <!-- <property name="dialect">org.hibernate.community.dialect.SQLiteDialect</property>-->
+
+        <!-- PostgreSQLDialect -->
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <!-- 
+            https://stackoverflow.com/a/23678638
+            create - Drop and re-create the database schema on startup 
+            update - create the database schema on startup if not exists
+        -->
+        <property name="hbm2ddl.auto">create</property>
+        
+        <!-- mapping -->
+
+    </session-factory>
+
+</hibernate-configuration>
